@@ -13,8 +13,8 @@ const routes: Routes = [
     component: FirstWithTabsPage,
     children: [
       {
-        path: 'tab1',
-        loadChildren: '../tab1/tab1.module#Tab1PageModule'
+        path: 'rocket',
+        loadChildren: '../rocket/rocket.module#RocketPageModule'
       },
       {
         path: 'tab2',
@@ -24,7 +24,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'tabs/tab1',
+    redirectTo: 'tabs/rocket',
     pathMatch: 'full'
   }
 ];

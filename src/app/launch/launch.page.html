@@ -7,6 +7,23 @@
     </ion-toolbar>
   </ion-header>
   <ion-content>
+
+    <!--<ion-tabs color="secondary">
+      <ion-tab-bar slot="top">
+        <ion-tab-button tab="Launch">
+          <ion-icon name="sunny"></ion-icon>
+          <ion-label>Lancements</ion-label>
+        </ion-tab-button>
+        <ion-tab-button tab="upcoming">
+          <ion-icon name="sunny"></ion-icon>
+          <ion-label>A Venir</ion-label>
+        </ion-tab-button>
+        <ion-tab-button tab="past">
+          <ion-icon name="moon"></ion-icon>
+          <ion-label>Past</ion-label>
+        </ion-tab-button>
+      </ion-tab-bar>
+    </ion-tabs>-->
   
     <app-skeleton *ngIf="!launches"></app-skeleton>
     <ion-list>
@@ -34,8 +51,7 @@
               <ion-icon slot="icon-only" name="star"></ion-icon>
             </ion-item-option>
           </ion-item-options>
-        </ion-item-sliding>
-
+      </ion-item-sliding>
     </ion-list>
   
   </ion-content>
