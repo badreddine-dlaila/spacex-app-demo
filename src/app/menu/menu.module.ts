@@ -17,7 +17,6 @@ const routes: Routes = [
       {
         path: 'home',
         loadChildren: '../home/home.module#HomePageModule'
-
       },
       {
         path: 'first',
@@ -30,6 +29,10 @@ const routes: Routes = [
       {
         path: 'second/details',
         loadChildren: '../details/details.module#DetailsPageModule'
+      },
+      {
+        path: 'mission',
+        loadChildren: '../missions/missions.module#MissionsPageModule'
       }
     ]
   }

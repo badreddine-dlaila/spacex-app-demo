@@ -21,6 +21,10 @@ export class MenuPage implements OnInit {
     {
       title: 'Second Page blank',
       url: '/menu/second'
+    },
+    {
+      title: 'Missions Page blank',
+      utl: '/menu/missions'
     }
   ];
   constructor(
