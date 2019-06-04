@@ -31,9 +31,13 @@ const routes: Routes = [
         loadChildren: '../details/details.module#DetailsPageModule'
       },
       {
-        path: 'mission',
-        loadChildren: '../missions/missions.module#MissionsPageModule'
-      }
+        path: 'launch', 
+        loadChildren: '../launch/launch.module#LaunchPageModule'
+      },
+      { 
+        path: 'mission', 
+        loadChildren: '../mission/mission.module#MissionPageModule' 
+      },
     ]
   }
 ];

@@ -9,22 +9,33 @@ import { NgProgress } from '@ngx-progressbar/core';
 })
 export class MenuPage implements OnInit {
   selectedPath: string;
+  iconMenu: string;
+
   pages = [
     {
       title: 'Home',
-      url: '/menu/home'
+      url: '/menu/home',
+      icon: 'home'
     },
     {
-      title: 'First Page with Tabs',
-      url: '/menu/first'
+      title: 'First',
+      url: '/menu/first',
+      icon:''
     },
     {
-      title: 'Second Page blank',
-      url: '/menu/second'
+      title: 'Second',
+      url: '/menu/second',
+      icon: ''
     },
     {
-      title: 'Missions Page blank',
-      utl: '/menu/missions'
+      title: 'Launch',
+      url: '/menu/launch',
+      icon: 'airplane'
+    },
+    {
+      title: 'Mission',
+      url: '/menu/mission',
+      icon : 'expand'
     }
   ];
   constructor(
