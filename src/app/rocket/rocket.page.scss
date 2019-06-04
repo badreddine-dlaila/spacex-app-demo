@@ -1,0 +1,9 @@
+.active {
+  border-left: 6px solid var(--ion-color-success);
+  margin: 0px 0 2px 0;
+}
+
+.inactive {
+  border-left: 6px solid var(--ion-color-danger);
+  margin: 0px 0 2px 0;
+}
