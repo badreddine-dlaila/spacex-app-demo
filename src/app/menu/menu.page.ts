@@ -9,7 +9,6 @@ import { NgProgress } from '@ngx-progressbar/core';
 })
 export class MenuPage implements OnInit {
   selectedPath: string;
-  iconMenu: string;
 
   pages = [
     {
@@ -18,7 +17,7 @@ export class MenuPage implements OnInit {
       icon: 'home'
     },
     {
-      title: 'Rocket',
+      title: 'Rockets',
       url: '/menu/first',
       icon:'jet'
     },
@@ -28,12 +27,12 @@ export class MenuPage implements OnInit {
       icon: ''
     },
     {
-      title: 'Launch',
-      url: '/menu/launch',
+      title: 'Départs',
+      url: '/menu/launches',
       icon: 'clock'
     },
     {
-      title: 'Mission',
+      title: 'Missions',
       url: '/menu/mission',
       icon : 'locate'
     }
