@@ -24,6 +24,16 @@ export class LaunchService {
     );
   }
 
+  getOneLaunch(number): Observable<Launch> {
+    const requestEndpoint = this.apiBaseUrl + 'launches/' + number;
+    return this.http.get<Launch>(requestEndpoint).pipe(
+      map(launch => {
+        console.log(launch);
+        return launch;
+      })
+    );
+  }
+
   convertDate(dateUTC): String {
     var myDate: String = new Date(dateUTC).toISOString();
     return myDate;

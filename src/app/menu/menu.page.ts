@@ -24,7 +24,7 @@ export class MenuPage implements OnInit {
     {
       title: 'Second',
       url: '/menu/second',
-      icon: ''
+      icon: 'home'
     },
     {
       title: 'Départs',

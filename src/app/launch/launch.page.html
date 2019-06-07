@@ -12,21 +12,18 @@
     <ion-list>
       <ion-item-sliding *ngFor="let l of launches" [ngClass]="{'active': l.active, 'inactive': !l.active}"
           class="ion-activatable" (click)="buttonClick(l.flight_number)">
-          <ion-item href="#">
+          <ion-item href="http://localhost:8100/menu/launches/details/{{l.flight_number}}">
             <ion-label>
               <h2>{{ l.mission_name }}</h2>
               <p>{{ l.launch_site.site_name_long }}</p>
               <p>{{ l.details }}</p>
             </ion-label>
             <ion-note slot="end">
-              {{ l.launch_date_local }}
+              {{ l.launch_year }}
             </ion-note>
           </ion-item>
     
           <ion-item-options side="end">
-            <ion-item-option color="primary">
-              <ion-icon slot="icon-only" name="more"></ion-icon>
-            </ion-item-option>
             <ion-item-option color="danger">
               <ion-icon slot="icon-only" name="trash"></ion-icon>
             </ion-item-option>
