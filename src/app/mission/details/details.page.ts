@@ -1,7 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {Mission} from '../../Models/mission.model';
-import {Observable} from 'rxjs/Rx';
+import {Observable} from 'rxjs';
 import {MissionService} from '../../services/mission.service';
+import {Location} from '@angular/common';
+
 
 @Component({
     selector: 'app-details',
@@ -13,9 +15,10 @@ export class DetailsPage implements OnInit {
     missionWiki: string;
     missionTwitter: string;
     missionWebsite: string;
+    missionPayloadIds: string[];
     observableMission: Observable<Mission[]>;
 
-    constructor(private missionService: MissionService) { }
+    constructor(private missionService: MissionService, private _location: Location) { }
 
     private getMissionId(): string {
         return window.location.pathname.split('/').pop();
@@ -31,6 +34,7 @@ export class DetailsPage implements OnInit {
             this.missionWiki = this.mission.wikipedia;
             this.missionTwitter = this.mission.twitter;
             this.missionWebsite = this.mission.website;
+            this.missionPayloadIds = this.mission.payload_ids;
         });
 
         setTimeout(() => {
@@ -48,6 +52,15 @@ export class DetailsPage implements OnInit {
 
     redirectToWebsite() {
         location.href = this.missionWebsite;
+    }
+
+    previous() {
+        this._location.back();
+    }
+
+    redirectToSearchPayloadByIdPage() {
+        //Implement redirection to search payload by id
+        console.log("pouet");
     }
 
 }
