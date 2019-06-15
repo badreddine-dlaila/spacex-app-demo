@@ -9,11 +9,7 @@
 
 <ion-content>
 	<app-skeleton *ngIf="!mission"></app-skeleton>
-	<ion-item>
-		<ion-icon name="arrow-round-back"></ion-icon>
-		<a id="back" (click)="previous()"><b>BACK</b></a>
-		<ion-icon name="happy"></ion-icon>
-	</ion-item>
+	<app-previous></app-previous>
 	<div *ngIf="mission">
 		<ion-label>
 			<h1>{{ mission.mission_name }}</h1>

@@ -2,7 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {Mission} from '../../Models/mission.model';
 import {Observable} from 'rxjs';
 import {MissionService} from '../../services/mission.service';
-import {Location} from '@angular/common';
 
 
 @Component({
@@ -18,7 +17,7 @@ export class DetailsPage implements OnInit {
     missionPayloadIds: string[];
     observableMission: Observable<Mission[]>;
 
-    constructor(private missionService: MissionService, private _location: Location) { }
+    constructor(private missionService: MissionService) { }
 
     private getMissionId(): string {
         return window.location.pathname.split('/').pop();
@@ -54,13 +53,10 @@ export class DetailsPage implements OnInit {
         location.href = this.missionWebsite;
     }
 
-    previous() {
-        this._location.back();
-    }
+
 
     redirectToSearchPayloadByIdPage() {
-        //Implement redirection to search payload by id
-        console.log("pouet");
+        // Implement redirection to search payload by id
+        console.log('pouet');
     }
-
 }
