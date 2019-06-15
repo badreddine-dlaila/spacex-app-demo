@@ -6,12 +6,13 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { MissionPage } from './mission.page';
+import { ComponentsModule } from '../modules/components/components.module';
 
 const routes: Routes = [
   {
     path: '',
     component: MissionPage
-  }
+  },
 ];
 
 @NgModule({
@@ -19,6 +20,7 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
+    ComponentsModule,
     RouterModule.forChild(routes)
   ],
   declarations: [MissionPage]

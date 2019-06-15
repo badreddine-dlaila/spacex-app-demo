@@ -1,0 +1,25 @@
+<ion-header>
+	<ion-toolbar color="secondary">
+		<ion-button slot="start">
+			<ion-menu-button></ion-menu-button>
+		</ion-button>
+		<ion-title>Mission Detail</ion-title>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content>
+	<app-skeleton *ngIf="!mission"></app-skeleton>
+	<div *ngIf="mission">
+		<ion-label>
+			<h1>{{ mission.mission_name }}</h1>
+			<h2>Manufacturer : {{ mission.manufacturers }}</h2>
+			<h2>{{ mission.description }}</h2>
+			<div>
+				<p>Click to learn more : </p>
+				<input id="wikiLogo" type="image" src="../../../assets/img/wikipediaLogo.png" (click)="redirectToWiki()">
+				<input id="twitterLogo" type="image" src="../../../assets/img/twitterLogo.png" (click)="redirectToTwitter()">
+				<input id="websiteLogo" type="image" src="../../../assets/img/websiteLogo.png" (click)="redirectToWebsite()">
+			</div>
+		</ion-label>
+	</div>
+</ion-content>

@@ -17,9 +17,14 @@ export class MenuPage implements OnInit {
       icon: 'home'
     },
     {
+        title: 'Missions',
+        url: '/menu/missions',
+        icon : 'locate'
+    },
+    {
       title: 'Rockets',
       url: '/menu/first',
-      icon:'jet'
+      icon: 'jet'
     },
     {
       title: 'Second',
@@ -30,11 +35,6 @@ export class MenuPage implements OnInit {
       title: 'Départs',
       url: '/menu/launches',
       icon: 'clock'
-    },
-    {
-      title: 'Missions',
-      url: '/menu/mission',
-      icon : 'locate'
     }
   ];
   constructor(
