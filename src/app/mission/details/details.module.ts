@@ -1,10 +1,10 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import {RouterModule, Routes} from "@angular/router";
-import {DetailsPage} from "./details.page";
-import {ComponentsModule} from "../../modules/components/components.module";
-import {IonicModule} from "@ionic/angular";
-import {FormsModule} from "@angular/forms";
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {RouterModule, Routes} from '@angular/router';
+import {DetailsPage} from './details.page';
+import {ComponentsModule} from '../../modules/components/components.module';
+import {IonicModule} from '@ionic/angular';
+import {FormsModule} from '@angular/forms';
 
 const routes: Routes = [
     {

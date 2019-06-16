@@ -23,7 +23,7 @@ export class DetailsPage implements OnInit {
         return window.location.pathname.split('/').pop();
     }
 
-    ngOnInit(): void {
+    ngOnInit() {
         const missionId = this.getMissionId();
         console.log(missionId);
 
@@ -53,10 +53,7 @@ export class DetailsPage implements OnInit {
         location.href = this.missionWebsite;
     }
 
-
-
-    redirectToSearchPayloadByIdPage() {
-        // Implement redirection to search payload by id
-        console.log('pouet');
+    redirectToSearchPayloadByIdPage(payloadId: string) {
+        location.href =  'http://localhost:8100/menu/payloads/details/' + payloadId;
     }
 }

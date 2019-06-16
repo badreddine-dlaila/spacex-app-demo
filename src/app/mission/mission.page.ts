@@ -15,17 +15,10 @@ export class MissionPage implements OnInit {
 
   constructor(private missionService: MissionService) { }
 
-    // private getMissionId(): string {
-    //     return window.location.pathname.split('/').pop();
-    // }
-
     ngOnInit() {
         this.missionService.getMissions().subscribe(result => {
             this.missions = result;
         });
-        //
-        // const missionId = this.getMissionId;
-        // console.log(missionId);
 
         setTimeout(() => {
                 this.observableMissions = this.missionService.getMissions();

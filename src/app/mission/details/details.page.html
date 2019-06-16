@@ -25,7 +25,7 @@
 				<div id="payloads">
 					<p>Relative payloads</p>
 					<div *ngFor="let payload of missionPayloadIds">
-						<input id="payloadLabel" type="button" (click)="redirectToSearchPayloadByIdPage()" value="{{ payload }}">
+						<input id="payloadLabel" type="button" (click)="redirectToSearchPayloadByIdPage(payload)" value="{{ payload }}">
 					</div>
 				</div>
 			</div>

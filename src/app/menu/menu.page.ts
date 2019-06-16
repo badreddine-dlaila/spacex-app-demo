@@ -17,9 +17,14 @@ export class MenuPage implements OnInit {
       icon: 'home'
     },
     {
-        title: 'Missions',
-        url: '/menu/missions',
-        icon : 'locate'
+      title: 'Missions',
+      url: '/menu/missions',
+      icon : 'locate'
+    },
+    {
+      title: 'Payloads',
+      url: '/menu/payloads',
+      icon: 'cube'
     },
     {
       title: 'Rockets',

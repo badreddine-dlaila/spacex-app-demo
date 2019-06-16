@@ -46,6 +46,14 @@ const routes: Routes = [
         path: 'missions/details/:missionId',
         loadChildren: '../mission/details/details.module#DetailsModule'
       },
+      {
+        path: 'payloads',
+        loadChildren: '../payload/payload.module#PayloadPageModule'
+      },
+      {
+        path: 'payloads/details/:payloadId',
+        loadChildren: '../payload/details/details.module#DetailsPageModule'
+      }
     ]
   }
 ];
