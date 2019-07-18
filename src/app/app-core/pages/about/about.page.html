@@ -9,6 +9,8 @@
   </ion-toolbar>
 </ion-header>
 
+
+
 <ion-content>
   <div>
     <ion-item-divider color="warning" sticky="true">
@@ -16,20 +18,22 @@
         API Info
       </ion-label>
     </ion-item-divider>
-    <ion-item lines="none">
-      <ion-button expand="full" class="mt-2 mb-2"(click)="openLink('https://api.spacexdata.com/v3/')">
-        https://api.spacexdata.com/v3
-        <ion-icon class="pl-3" name="arrow-forward"></ion-icon>
-      </ion-button>
-      <ion-note slot="end" class="d-none d-md-block">
-        <ion-row class="m-2 bd-highlight">
-          <ion-badge color="success">/v3</ion-badge>
-        </ion-row>
-        <ion-row class="m-2">
-          <ion-badge color="success">API Info</ion-badge>
-        </ion-row>
-      </ion-note>
-    </ion-item>
+      <ng-container *ngIf="aboutService$ | async as about; else lottie_loader">
+        <ion-card >
+          <ion-card-header>
+            <ion-card-subtitle>{{about.version}}</ion-card-subtitle>
+            <ion-card-title>{{about.project_name}}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <p>{{about.description}}
+              <br>
+              {{about.docs}}
+              <br>
+            </p>
+            
+          </ion-card-content>
+        </ion-card>
+      </ng-container>
     <ion-item-divider color="warning" sticky="true">
       <ion-label>
         Company Info
