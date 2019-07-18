@@ -8,9 +8,17 @@
     <ion-title *ngIf="mission">{{mission.mission_name}}</ion-title>
   </ion-toolbar>
 </ion-header>
-
-<ion-content padding>
-    <ng-container *ngIf="mission">
-        <ngx-json-viewer [json]="mission" [expanded]="false"></ngx-json-viewer>
-      </ng-container>
+<ion-content>
+  <ng-container>
+    <ion-card-header>
+      <ion-card-title>{{mission.mission_name}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>{{mission.description}}</p>
+    </ion-card-content>
+    <ion-title>Payloads list</ion-title>
+    <ion-item *ngFor="let payload of mission.payload_ids">
+      <p [routerLink]="['/payloads', payload]" routerDirection="forward" padding="2">{{ payload }}</p>
+    </ion-item>
+  </ng-container>
 </ion-content>
