@@ -9,6 +9,7 @@ const routes: Routes = [
   { path: 'history', loadChildren: './history/pages/historical-events/historical-events.module#HistoricalEventsPageModule' },
   { path: 'about', loadChildren: './app-core/pages/about/about.module#AboutPageModule' },
   { path: 'settings', loadChildren: './app-core/pages/settings/settings.module#SettingsPageModule' },
+  { path: 'rockets', loadChildren: './rockets/rockets.module#RocketsPageModule' },
   ];
 
 @NgModule({
