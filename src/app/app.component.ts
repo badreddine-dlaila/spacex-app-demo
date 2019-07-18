@@ -35,10 +35,6 @@ export class AppComponent {
       url: '/rockets',
     },
     {
-      title: 'Payloads',
-      url: '/payloads',
-    },
-    {
       title: 'Cores',
       url: '/cores',
     },

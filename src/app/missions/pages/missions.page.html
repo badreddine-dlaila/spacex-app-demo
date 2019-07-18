@@ -10,8 +10,8 @@
 </ion-header>
 <ion-content>
   <div *ngIf="missions$ | async as missions">
-    <ion-item *ngFor="let mission of missions">
-      <ion-img class="image" height="50 px" width="50 px" src="../../../../assets/images/img{{randomNumber$}}.jpg"></ion-img>
+    <ion-item *ngFor="let mission of missions" button [routerLink]="['/missions', mission.mission_id]" routerDirection="forward" padding="2">
+      <ion-img margin="10px" class="image" height="50 px" width="50 px" src="https://picsum.photos/id/344/200/200"></ion-img>
       <ion-label class="d-inline">
         <h2>{{mission.mission_id }}</h2>
         <p class="ion-text-wrap" style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; line-height: 16px; max-height: 32px; -webkit-box-orient: vertical">{{mission.description}}</p>

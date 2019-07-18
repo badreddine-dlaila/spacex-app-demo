@@ -17,11 +17,16 @@ export class MissionsPage implements OnInit {
   constructor(private inAppBrowser: InAppBrowser, private missionService: MissionsService) { }
 
   ngOnInit() {
-    this.randomNumber$ = this.getRandomIntInclusive(0, 2);
     this.missions$ = this.missionService.getAllMissions();
   }
 
-  openLink(link: string) {
+  ionViewWillEnter() {
+    this.randomNumber$ = this.getRandomIntInclusive(0, 2);
+
+  }
+
+
+    openLink(link: string) {
     this.inAppBrowser.create(link, '_system');
   }
 
