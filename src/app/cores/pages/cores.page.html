@@ -12,48 +12,22 @@
     </ion-title>
   </ion-toolbar>
 </ion-header>
-
 <ion-content>
-  <ion-segment scrollable padding (ionChange)="segmentChanged($event)" [(ngModel)]="segementValue">
-    <ion-segment-button value="ALL">
-      <ion-label>All</ion-label>
-    </ion-segment-button>
-    <ion-segment-button value="PAST">
-      <ion-label>Past</ion-label>
-    </ion-segment-button>
-    <ion-segment-button value="UPCOMING">
-      <ion-label>Upcoming</ion-label>
-    </ion-segment-button>
-  </ion-segment>
-  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
-    <ion-refresher-content>
-    </ion-refresher-content>
-  </ion-refresher>
-  <div *ngIf="cores$ | async as cores">
-    <div *ngFor="let core of cores">
-      <ion-item-divider
-        [color]="(core.status === 'unknown') ? 'medium' : (core.status === 'active') ? 'success' : (core.status === 'inactive') ? 'warning' : 'danger'"
-        sticky="true">
-        <ion-label>
-          {{core.core_serial}}
-        </ion-label>
-      </ion-item-divider>
-      <ion-item>
-        <div class="pl-2 pt-2 pb-2">
-          <ngx-json-viewer [json]="core" [expanded]="false">
-          </ngx-json-viewer>
-        </div>
-      </ion-item>
-      <ion-row padding class="d-flex flex-row-reverse">
-        <ion-button expand="full" class="mr-1" (click)="goToCoreDetails(core)">
-          Details
-          <ion-icon class="pl-3" name="add"></ion-icon>
-        </ion-button>
-        <ion-button expand="full" class="mr-1" [routerLink]="['/launches/', core.missions[0].flight]">
-          Launch
-          <ion-icon class="pl-3" name="arrow-forward"></ion-icon>
-        </ion-button>
-      </ion-row>
-    </div>
-  </div>
+  <ng-container *ngIf="cores$ | async as cores">
+    <ion-card *ngFor="let core of cores" button [routerLink]="['/launches']" routerDirection="forward">
+      <ion-card-header>
+        <ion-card-subtitle>{{core.core_serial}}</ion-card-subtitle>
+        <ion-card-title class="textColor" color="#FFFFFF">{{core.missions[0].name}}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p class="textColorGray">{{core.details || "No details" }}</p>
+        <ion-row class="pt-3 d-flex flex-row-reverse">
+          <ion-button disabled="true" color="dark" expand="block" fill="outline" size="small">
+            {{ core.status }}
+          </ion-button>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+    <ion-img class="image" height="250 px" width="250 px" src="../../../../assets/images/fusee-png-3.png"></ion-img>
+  </ng-container>
 </ion-content>
