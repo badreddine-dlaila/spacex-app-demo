@@ -17,6 +17,16 @@
       </ion-card-header>
       <ion-card-content>
         <p>{{launch.details}}</p>
+        {{ launch.launch_date_utc | date: "short" }}
+        <ng-container *ngIf="launch.launch_success !== null">
+          <ion-chip
+            outline="true"
+            color="success"
+            *ngIf="launch.launch_success; else launch_failure"
+          >
+            <ion-label color="success">Success</ion-label>
+          </ion-chip>
+        </ng-container>
         <ion-row class="pt-3 d-flex flex-row-reverse">
           <ion-button
             *ngIf="launch.rocket.first_stage.cores[0].landing_intent && launch.rocket.first_stage.cores[0].landing_vehicle"
@@ -27,6 +37,8 @@
         </ion-row>
       </ion-card-content>
     </ion-card>
+    <ion-img class="image" height="250 px" width="250 px" src="../../../../assets/images/fusee-png-3.png"></ion-img>
+
   </ng-container>
 </ion-content>
 

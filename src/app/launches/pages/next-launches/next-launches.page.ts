@@ -17,4 +17,6 @@ export class NextLaunchesPage implements OnInit {
     this.nextLaunch$ = this.launchesService.getNextLaunch();
   }
 
+
+
 }
