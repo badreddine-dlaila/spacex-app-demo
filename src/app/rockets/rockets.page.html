@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Launch rockets
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="rockets$ | async as rockets">
+    <ion-item *ngFor="let rocket of rockets">
+      <ion-img class="image" height="50 px" width="50 px" src="{{ rocket.flickr_images[1] }}"></ion-img>
+      <ion-label class="d-inline">
+        <h2>{{rocket.rocket_name }} | {{ rocket.company}}</h2>
+        <p class="ion-text-wrap">{{rocket.description}}</p>
+      </ion-label>
+      <ion-note slot="end" class="d-none d-md-block align-self-center">
+        <ion-row>
+          {{rocket.country}}
+        </ion-row>
+        <ion-row>
+          {{rocket.rocket_type}}
+        </ion-row>
+        <ion-row *ngFor="let rocket of rocket.vehicles_launched">
+          <ion-badge class="mt-2" color="primary">{{rocket}}</ion-badge>
+        </ion-row>
+      </ion-note>
+    </ion-item>
+  </div>
+</ion-content>

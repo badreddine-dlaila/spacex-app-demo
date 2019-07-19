@@ -16,5 +16,4 @@ export class NextLaunchesPage implements OnInit {
   ngOnInit() {
     this.nextLaunch$ = this.launchesService.getNextLaunch();
   }
-
 }

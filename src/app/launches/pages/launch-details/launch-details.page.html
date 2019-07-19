@@ -8,9 +8,29 @@
     <ion-title>{{launch.mission_name}}</ion-title>
   </ion-toolbar>
 </ion-header>
-
-<ion-content padding>
-  <ng-container *ngIf="launch">
-    <ngx-json-viewer [json]="launch" [expanded]="false"></ngx-json-viewer>
+<ion-content>
+  <ng-container>
+    <ion-card-header>
+      <ion-card-subtitle>{{launch.launch_date_utc | date:'fullDate'}}</ion-card-subtitle>
+      <ion-card-title class="textColorWhite">{{launch.mission_name}} | Flights'number : {{ launch.flight_number }}</ion-card-title>
+      <ion-note color="secondary">{{launch.launch_site.site_name_long}}</ion-note>x
+    </ion-card-header>
+    <ion-card-content>
+      <p>{{launch.details}}</p>
+      <ion-row class="pt-3 d-flex flex-row-reverse">
+        <ion-button disabled="true" color="dark" expand="block" fill="outline" size="small">{{launch.launch_date_local | date: 'dd/MM/yyyy' }}</ion-button>
+        <ion-button
+                *ngIf="launch.rocket.first_stage.cores[0].landing_intent && launch.rocket.first_stage.cores[0].landing_vehicle"
+                disabled="true" color="dark" expand="block" fill="outline" size="small">
+          {{launch.rocket.first_stage.cores[0].landing_vehicle}}</ion-button>
+        <ion-button disabled="true" color="dark" expand="block" fill="outline" size="small">
+          {{launch.rocket.second_stage.payloads[0].orbit}}</ion-button>
+      </ion-row>
+    </ion-card-content>
   </ng-container>
+  <ion-item *ngFor="let mission of launch.mission_id">
+    <ion-button button [routerLink]="['/missions', mission]" routerDirection="forward" padding="2">
+      <p>Mission ID : {{ mission }}</p>
+    </ion-button>
+  </ion-item>
 </ion-content>

@@ -8,52 +8,15 @@
     </ion-title>
   </ion-toolbar>
 </ion-header>
-
 <ion-content>
-  <ion-item-divider color="warning" sticky="true">
-    <ion-label>
-      Missions
-    </ion-label>
-  </ion-item-divider>
-  <ion-item lines="none">
-    <ion-button expand="full" class="mt-2 mb-2" (click)="openLink('https://api.spacexdata.com/v3/missions')">
-      https://api.spacexdata.com/v3/missions
-      <ion-icon class="pl-3" name="arrow-forward"></ion-icon>
-    </ion-button>
-    <ion-note slot="end" class="d-none d-md-block">
-      <ion-row class="m-2 bd-highlight">
-        <ion-badge color="success">/missions</ion-badge>
-      </ion-row>
-    </ion-note>
-  </ion-item>
-  <ion-item lines="none">
-    <ion-button expand="full" class="mt-2 mb-2" (click)="openLink('https://api.spacexdata.com/v3/missions/F3364BF')">
-      https://api.spacexdata.com/v3/missions/mission_id
-      <ion-icon class="pl-3" name="arrow-forward"></ion-icon>
-    </ion-button>
-    <ion-note slot="end" class="d-none d-md-block">
-      <ion-row class="m-2 bd-highlight">
-        <ion-badge color="success">/missions/mission_id</ion-badge>
-      </ion-row>
-    </ion-note>
-  </ion-item>
-
-  <ion-item-divider color="warning" sticky="true">
-    <ion-label>
-      Mission details
-    </ion-label>
-  </ion-item-divider>
-  <ion-row padding>
-    <ion-col>
-      <ion-label position="stacked">Mission Id <ion-text color="danger">*</ion-text>
+  <div *ngIf="missions$ | async as missions">
+    <ion-item *ngFor="let mission of missions" button [routerLink]="['/missions', mission.mission_id]" routerDirection="forward" padding="2">
+      <ion-img margin="10px" class="image" height="50 px" width="50 px" src="https://picsum.photos/id/344/200/200"></ion-img>
+      <ion-label class="d-inline">
+        <h2>{{mission.mission_id }}</h2>
+        <p class="ion-text-wrap" style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; line-height: 16px; max-height: 32px; -webkit-box-orient: vertical">{{mission.description}}</p>
+        <ion-card-subtitle class="textColorWhite">{{ mission.website }}</ion-card-subtitle>
       </ion-label>
-      <ion-input [(ngModel)]="missionId" placeholder="id" required></ion-input>
-    </ion-col>
-  </ion-row>
-  <ion-row padding class="d-flex align-items-center pt-0">
-    <ion-button expand="full" class="w-100" [routerLink]="['/missions/', missionId]" routerDirection="forward">
-      Details
-      <ion-icon class="pl-3" name="add"></ion-icon>
-    </ion-button>
-  </ion-row>
+    </ion-item>
+  </div>
 </ion-content>

@@ -1,24 +1,24 @@
 /** Ionic CSS Variables **/
 :root {
-  --ion-font-family: 'DinoFont';
-  // --ion-background-color: #303030;
-  // --ion-text-color: #ffffff;
+  --ion-font-family: 'Space';
+   --ion-background-color: #2e2836;
+   --ion-text-color: #ffffff;
 
   /** primary **/
-   --ion-color-primary: #303F9F;
+   --ion-color-primary: #6a2e35;
    --ion-color-primary-rgb: 48,63,159;
-   --ion-color-primary-contrast: #ffffff;
+   --ion-color-primary-contrast: #FFFFFF;
    --ion-color-primary-contrast-rgb: 255,255,255;
-   --ion-color-primary-shade: #2a378c;
-   --ion-color-primary-tint: #4552a9;
+   --ion-color-primary-shade: #2e2836;
+   --ion-color-primary-tint: #2e2836;
  
    /** secondary **/
-   --ion-color-secondary: #3F51B5;
+   --ion-color-secondary: #FFFFFF;
    --ion-color-secondary-rgb: 63,81,181;
    --ion-color-secondary-contrast: #ffffff;
    --ion-color-secondary-contrast-rgb: 255,255,255;
-   --ion-color-secondary-shade: #37479f;
-   --ion-color-secondary-tint: #5262bc;
+   --ion-color-secondary-shade: #FFFFFF;
+   --ion-color-secondary-tint: #FFFFFF;
  
    /** tertiary **/
    --ion-color-tertiary: #E91E63;
@@ -53,15 +53,15 @@
    --ion-color-danger-tint: #f5564a;
  
    /** dark **/
-    --ion-color-dark: #212121;
+    --ion-color-dark: #757575;
    --ion-color-dark-rgb: 33,33,33;
    --ion-color-dark-contrast: #ffffff;
    --ion-color-dark-contrast-rgb: 255,255,255;
-   --ion-color-dark-shade: #1d1d1d;
-   --ion-color-dark-tint: #373737;
+   --ion-color-dark-shade: #676767;
+   --ion-color-dark-tint: #838383;
  
    /** medium **/
-   --ion-color-medium: #757575;
+   --ion-color-medium: #cccccc;
    --ion-color-medium-rgb: 117,117,117;
    --ion-color-medium-contrast: #ffffff;
    --ion-color-medium-contrast-rgb: 255,255,255;
@@ -79,8 +79,8 @@
 }
 
 @font-face {
-  font-family: 'DinoFont';
+  font-family: 'Space';
   font-style: normal;
   font-weight: normal;
-  src: url('../assets/fonts/PFDinMono.ttf');
+  src: url('../assets/fonts/space-age.ttf');
 }
